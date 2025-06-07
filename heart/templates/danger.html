@@ -1,0 +1,133 @@
+{% include 'prenav.html' %}
+
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+  </head>
+    <style>
+      body {
+        text-align: center;
+        padding: 40px 0;
+        background-image:url('https://img.hcinnovationgroup.com/files/base/ebm/hci/image/2019/03/AI_doctor_future.5c865c5179692.png?auto=format&fit=max&w=1200');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+        h2 {
+          color: #f30a0a;
+          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-weight: 900;
+          font-size: 40px;
+          margin-bottom: 10px;
+        }
+        p {
+          color: #404F5E;
+          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-size:20px;
+          margin: 0;
+        }
+      i {
+        color: #fa0a0a;
+        font-size: 100px;
+        line-height: 200px;
+        margin-left:-15px;
+      }
+      .card {
+        background: white;
+        padding: 40px;
+        border-radius: 4px;
+        box-shadow: 0 2px 3px #C8D0D8;
+        display: inline-block;
+        margin: 0 auto;
+      }
+
+      .signup-container {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form {
+    width: 300px; 
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: auto; 
+}
+
+.signup-form h2 {
+    margin: 0 0 20px;
+}
+
+.signup-form select {
+    width: calc(100% - 24px); 
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 0 8px; 
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.signup-form select:hover {
+    border-color: #007bff; 
+}
+
+.signup-form button {
+    width: calc(100% + 20px); 
+    height: 40px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 10px; 
+    transition: background-color 0.3s ease;
+}
+.signup-form input {
+    width: calc(100% - 24px); 
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 0 8px; 
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.signup-form input:hover {
+    border-color: #007bff; 
+}
+
+.signup-form button:hover {
+    background-color: #0056b3; 
+}
+    </style>
+    <body>
+      <div class="card">
+      <div style=" height:300px; width:300px;background-image: url('https://cdn.vectorstock.com/i/preview-1x/71/01/danger-heart-attack-alert-symbol-papercut-vector-44227101.jpg'); margin:0 auto;background-repeat:no repeat;background-size: contain;">
+      </div>
+        <h2>Oops.</h2> 
+        <p>Your health is in Danger.<br/> You need to consult the doctor.. immediatly..!</p>
+      </div><br><br>
+
+      <div class="signup-container">
+        <form class="signup-form" action="/hospital" method="POST">
+          <h2>Search Near Hospitals</h2>
+          <select name="town">
+            <option>---choose your town---</option>
+            <option>janagam</option>
+            <option>warangal</option>
+            <option>hyderabad</option>
+          </select>
+          <input type="submit" value="search">
+        </form>
+      </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stay </title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-image: url('https://wallpapercave.com/wp/wp2968489.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+.header {
+  min-height: 100vh;
+}
+
+  .navbar {
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 10vh;
+    position: fixed;
+    width: 100%;
+
+    .logo {
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #070606;
+    }
+
+    .nav-links {
+      display: flex;
+      transition: 0.3s ease all;
+
+      li {
+        list-style-type: none;
+
+        a {
+          text-decoration: none;
+          color: #0a0606;
+          font-size: 1.05rem;
+          margin: 0 1.2rem;
+          position: relative;
+        }
+
+        a::after {
+          position: absolute;
+          content: "";
+          bottom: -4px;
+          left: 0;
+          height: 2px;
+          width: 0%;
+          background-color: #070606;
+          display: block;
+        }
+
+        a:hover::after {
+          width: 100%;
+          transition: 0.3s ease all;
+        }
+      }
+    }
+
+    .nav-links.nav-active {
+      transform: translateX(0%);
+    }
+  }
+
+  .hamburger-menu {
+    cursor: pointer;
+    display: none;
+
+    div {
+      width: 30px;
+      height: 4px;
+      background-color: #080808;
+      margin: 6px;
+      border-radius: 10px;
+      transition: 0.3s ease all;
+    }
+  }
+
+  .navbar.sticky {
+    background: rgb(1, 37, 116);
+    transition: 0.3s ease all;
+
+    .logo {
+      padding-left: 0.8rem;
+      transition: 0.3s ease all;
+    }
+
+    .nav-links {
+      padding-right: 0.8rem;
+      transition: 0.3s ease all;
+    }
+
+    .hamburger-menu {
+      padding-right: 1rem;
+      transition: 0.3s ease all;
+    }
+  }
+  .showcase {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+
+    h1 {
+      font-size: 2.4rem;
+      word-spacing: 3px;
+      color: #0c0b0b;
+    }
+
+    button {
+      margin-top: 3rem;
+      border: none;
+      outline: none;
+      background-color: whitesmoke;
+      border: 2px solid #0a0000;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-family: inherit;
+      color: #120c0c;
+      border-radius: 3px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #beb8b8;
+        color: rgb(234, 237, 241);
+        transition: 0.3s ease all;
+      }
+    }
+  }
+
+.services {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #e1d8d8;
+
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    word-spacing: 4px;
+    position: relative;
+    padding-top: 4rem;
+    margin-bottom: 4rem;
+    z-index: -1;
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 3px;
+      width: 100%;
+      display: block;
+      bottom: -5px;
+      left: 0;
+      
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: left ;
+    justify-content: center;
+    padding: 0 2rem;
+
+    
+  }
+}
+
+@media (max-width: 725px) {
+  .navbar {
+    .nav-links {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 225px;
+      background: rgb(1, 37, 116);
+      margin: 0;
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      transform: translateX(-100%);
+      z-index: 10;
+    }
+
+    .hamburger-menu {
+      display: block;
+    }
+
+    .bar-change .bar1 {
+      transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    .bar-change .bar2 {
+      opacity: 0;
+    }
+
+    .bar-change .bar3 {
+      transform: rotate(45deg) translate(-9px, -5px);
+    }
+  }
+
+  .services {
+    .container {
+      flex-wrap: wrap;
+      
+    }
+  }
+}
+
+    </style>
+
+    <script>
+        const navLinks = document.querySelector('.nav-links');
+const burger = document.querySelector('.hamburger-menu');
+const navbar = document.querySelector('.navbar');
+
+// Event listeners
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-active');
+    burger.classList.toggle('bar-change');
+})
+
+// Sticky navbar
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('sticky', scrollY > 0)
+})
+    </script>
+
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="logo">Stay Healthy... Stay Safe..</h1>
+            <ul class="nav-links">
+                <li><button><a href="/">Home</a></button></li>
+                <background-color: whitesmoke></background-color>
+                <li><button><a href="/login">Sign In</a></button></li>
+                <background-color: whitesmoke></background-color>
+            </ul>
+            <div class="hamburger-menu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
+        <div class="showcase">
+            <h1>Mind your health..Mind your future..</h1>
+            <button>See More</button>
+        </div>
+    </header>
+    
+    <section class="services" id="services">
+        <h1><center><u>Our Services</u></center></h1>
+        <div class="container">
+            <div class="service">
+                <i class="fa fa-ambulance fa-3x"></i>
+                <p><center>Our dedicated Case File Managers provide outstanding customer support.</center></p>
+                <p><center>Our simple, online process enables you to easily track clients' medicals.</center></p>
+                <p><center>Our dedicated Case File Managers provide outstanding customer support.</center></p>
+                <p><center>Outstanding client service and fast turnaround times result in Health Predictions being a preferred provider for many advisers and insurers.</center></p>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>
